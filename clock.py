@@ -1,9 +1,9 @@
 import numpy as np
 # chuỗi input: frame
-frame = np.array([1, 2, 3, 6, 7, 1, 4, 3, 4, 5, 7,
+s = np.array([1, 2, 3, 6, 7, 1, 4, 3, 4, 5, 7,
                  4, 1, 2, 3, 1, 3, 1, 4, 5, 6, 7, 1])
 # input: số trang
-paging = 4
+capacity = 4
 # output: thay đổi của trang
 schedule = np.array([])
 status = np.zeros((paging, len(frame)+1))

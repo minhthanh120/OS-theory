@@ -2,9 +2,11 @@
 # Created By: Suman Adhikari
 
 print("Enter the number of frames: ", end="")
-capacity = int(input())
+#capacity = int(input())
+capacity = 4
 f, fault, top, pf = [], 0, 0, 'No'
 s = [1, 2, 3, 4, 7, 4, 2, 3, 4, 5, 7, 1, 2, 3, 7, 1, 3, 4, 1, 5, 6, 7, 1]
+
 print("\nString|Frame →\t", end='')
 for i in range(capacity):
     print(i, end=' ')
