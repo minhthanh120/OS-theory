@@ -1,7 +1,7 @@
 # FIFO page replacement algorithm implementation in python
 # Created By: Suman Adhikari
 
-print("Enter the number of frames: ", end="")
+#print("Enter the number of frames: ", end="")
 #capacity = int(input())
 capacity = 4
 f, fault, top, pf = [], 0, 0, 'No'
