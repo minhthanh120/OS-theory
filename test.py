@@ -1,9 +1,16 @@
 from tkinter import *
 from tkinter.ttk import *
-from tkinter import messagebox
 import tkinter
+import tkinter.font as font
 
-window =Tk()
+window = Tk()
+window.title('Giải thuật thay thế trang clock')
+window.geometry("400x600")
+scrollbar = Scrollbar(window)
+scrollbar.pack( side = RIGHT, fill = Y )
+myfont = font.Font(size=30)
+
+mylist= Listbox(window,width= 400, height = 600, yscrollcommand = scrollbar.set)
 # chuỗi input: frame
 # s = [1, 2, 3, 6, 7, 1, 4, 3, 4, 5, 7,
 #     4, 1, 2, 3, 1, 3, 1, 4, 5, 6, 7, 1]
@@ -34,17 +41,17 @@ for i in s:
     for x in f:
         output = output+str(x)+' '
     for x in range(capacity-len(f)):
-        output = output+' '*2
+        output = output+' '*3
     output = output + pf + ' '
     for y in status:
         output = output + str(y) + ' '
     output = output + '|' + ' '*2 + str(top)
-
-    #print(output)
-    nlabel= Label(window, text=output)
+    mylist.insert(END, output)
+    # print(output)
+    '''nlabel = Label(window, text=output)
     nlabel.pack()
-    p= Label(window, text= '-' * len(output))
-    p.pack()
+    p = Label(window, text='-' * len(output))
+    p.pack()'''
     '''
     print("   %d\t\t" % i, end='')
     for x in f:
@@ -57,11 +64,10 @@ for i in s:
     print("|", top)
     print("")
     '''
-nlabel = Label(window, text= str(fault))
-#print(fault)
-
-
-
+mylist.pack()
+scrollbar.config( command = mylist.yview )
+nlabel = Label(window, text=str(fault))
+# print(fault)
 
 
 '''def myclick():
@@ -72,4 +78,4 @@ nlabel = Label(window, text= str(fault))
 lb=Button(window, text= 'new').grid(column=1, row=1)
 mb.pack()'''
 window.mainloop()
-#window.mainloop()7
+# window.mainloop()7

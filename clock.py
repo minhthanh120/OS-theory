@@ -5,7 +5,8 @@ s = [1, 2, 3, 4, 7, 4, 2, 3, 4, 5, 7, 1, 2, 3, 7, 1, 3, 4, 1, 5, 6, 7, 1]
 # input: số trang
 capacity = 4
 # output: thay đổi của trang
-pf, fault, top, f, status = 0, 0, 0, [], [0]*capacity
+pf=''
+fault, top, f, status = 0, 0, [], [0]*capacity
 for i in s:
     if i not in f:
         if len(f) < capacity:
@@ -23,7 +24,7 @@ for i in s:
         status[f.index(i)] = 1
         pf = '| No|'
 
-    output = '  '+str(i)+' '*4
+    output = ' '+str(i)+' '*2
 #    print("   %d\t\t" % i, end='')
     for x in f:
         output = output+str(x)+' '

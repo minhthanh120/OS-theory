@@ -26,7 +26,7 @@ btnHello.grid(column=1, row=1)
 # Thêm combobox
 
 combo = Combobox(window)
-combo['values'] = ("Bạn 1", "Bạn 2", "Bạn 3")
+combo['values'] = list(range(1,10))
 combo.current(0)
 combo.grid(column=0, row=2 )
 
