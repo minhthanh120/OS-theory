@@ -5,7 +5,7 @@ s = [1, 2, 3, 4, 7, 4, 2, 3, 4, 5, 7, 1, 2, 3, 7, 1, 3, 4, 1, 5, 6, 7, 1]
 # input: số trang
 capacity = 4
 # output: thay đổi của trang
-pf=''
+pf = ''
 fault, top, f, status = 0, 0, [], [0]*capacity
 for i in s:
     if i not in f:

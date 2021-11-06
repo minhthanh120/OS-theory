@@ -6,7 +6,7 @@
 capacity = 4
 f, st, fault, pf = [], [], 0, 'No'
 #print("Enter the reference string: ", end="")
-s = [1, 2, 3, 4, 7, 4, 2, 3, 4, 5, 7, 1, 2, 3, 7, 1, 3, 4, 1, 5, 6, 7, 1]
+s = [1, 2, 3, 6, 7, 1, 4, 3, 4, 5, 7, 4, 1, 2, 3, 1, 3, 1, 4, 5, 6, 7, 1]
 print("\nString|Frame →\t", end='')
 for i in range(capacity):
     print(i, end=' ')
@@ -23,7 +23,7 @@ for i in s:
         pf = 'Yes'
         fault += 1
     else:
-        st.append(st.pop(st.index(f.index(i))))
+        st.append(st.pop(st.index(f.index(i)))) 
         pf = 'No'
     print("   %d\t\t" % i, end='')
     for x in f:
