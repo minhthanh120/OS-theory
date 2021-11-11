@@ -33,7 +33,7 @@ combo.grid(column=0, row=2 )
 
 def handleButton1():
     #lbl.configure(text = "Hi," + combo.get())
-    messagebox.showinfo("Mì AI Test", "Hi," + combo.get())
+    messagebox.showinfo("Mì AI Test", "Hi," + str(combo.get()+100))
     return
 
 # Thêm button

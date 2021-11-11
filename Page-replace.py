@@ -4,11 +4,10 @@ from tkinter.ttk import *
 
 
 window = Tk()
-window.geometry("800x150")
+window.geometry("400x350")
 var = IntVar()
 # start = IntVar()
 # end=IntVar()
-
 
 def sel():
     selection = "You selected the option " + str(var.get())
@@ -25,33 +24,41 @@ def sel():
 
 R1 = Radiobutton(window, text="Danh sách trang", variable=var, value=1,
                  command=sel)
-R1.grid(column=0, row=0, sticky=W)
+R1.place(x=0, y=0)
 
 s = Entry(window, width=60)
-s.grid(column=0, row=1)
+s.place(x=0, y=25)
 
 R2 = Radiobutton(window, text="Tự động tạo danh sách trang", variable=var, value=2,
                  command=sel)
-R2.grid(column=0, row=2, sticky=W)
+R2.place(x=0, y=50)
 
 # b = Entry(window, width=90, state=DISABLED)
 # b.grid(column=0, row=4)
 
-start = Combobox(window, state=DISABLED)
-start['values'] = list(range(1, 10))
-start.grid(column=0, row=5, sticky=W)
+ls= Label(window, text="Bắt đầu")
+ls.place(x=0, y=75)
 
-end = Combobox(window, state=DISABLED)
-end['values'] = list(range(1, 10))
-end.grid(column=1, row=5, sticky=W)
+le= Label(window, text="Kết thúc")
+le.place(x=200, y=75)
 
-ls = Label(window, text="Bắt đầu")
-ls.grid(column=0, row=4, sticky=W)
+start = Combobox(window, state = DISABLED)
+start['values'] = list(range(1,10))
+start.place(x=0, y=100)
 
-le = Label(window, text="Kết thúc")
-le.grid(column=1, row=4, sticky=W)
+end = Combobox(window, state = DISABLED)
+end['values'] = list(range(1,10))
+end.place(x=200, y=100)
 
-label = Label(window)
-label.grid(column=0, row=6, sticky=W)
+lc = Label(window, text= "Số khung trang:")
+lc.place(x= 20, y= 125)
+
+capacity = Combobox(window, width=10)
+capacity['values']= list(range(1,15))
+capacity.place(x = 115, y=125)
+
+
+label = Label(window, text= "here")
+label.place(x=70, y=155)
 
 window.mainloop()
