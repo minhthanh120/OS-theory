@@ -1,12 +1,13 @@
 from tkinter import *
 from tkinter.ttk import *
+from tkinter.font import Font
 from tkinter import messagebox
 import tkinter
 
 window = Tk()
 window.title("Mì AI Form")
 window.geometry("800x600")
-
+#myFont = Font(family="Times New Roman", size=12)
 # Thêm label
 lbl = tkinter.Label(window, text="Hello Mì AI", fg="red", font=("Arial", 50))
 lbl.grid(column=0, row=0)
@@ -21,6 +22,7 @@ def handleButton():
 
 # Thêm button
 btnHello = Button(window, text="Say Hello", command=handleButton)
+#btnHello.configure(font = myFont)
 btnHello.grid(column=1, row=1)
 
 # Thêm combobox
