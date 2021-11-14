@@ -2,8 +2,14 @@ from tkinter import *
 import tkinter
 from tkinter.ttk import *
 from tkinter import messagebox
-
-import test_clock, test_opt, test_fifo, test_lru
+import cal_clock
+import cal_fifo
+import cal_lru
+import cal_opt
+import test_clock
+import test_opt
+import test_fifo
+import test_lru
 
 import random
 allfont = ("Arial", 12)
@@ -53,6 +59,32 @@ def rnd():
     lst.insert(0, listpage)
     messagebox.showinfo("Chuỗi random", listpage)
     return
+
+
+def eval():
+    if var.get() == 1:
+        listpage = s.get()
+    elif var.get() == 2:
+        listpage = lst.get()
+    capacity = int(ccb.get())
+    a = listpage.split(" ")
+    capacity = int(ccb.get())
+    a = listpage.split(" ")
+    if len(listpage) == 0:
+        messagebox.showinfo("test run", "Mời nhập chuỗi khảo trang")
+    else:
+        new = Tk()
+        new.title("Đánh giá thuật toán thay thế trang")
+        new.geometry("400x100")
+        Label(new, text="Page-fault thuật toán OPT: " +
+              str(cal_opt.opt(a, capacity))).pack()
+        Label(new, text="Page-fault thuật toán LRU: " +
+              str(cal_lru.lru(a, capacity))).pack()
+        Label(new, text="Page-fault thuật toán FIFO: " +
+              str(cal_fifo.fifo(a, capacity))).pack()
+        Label(new, text="Page-fault thuật toán CLOCK: " +
+              str(cal_clock.clock(a, capacity))).pack()
+        new.mainloop()
 
 
 def run():
@@ -174,8 +206,10 @@ clock = Radiobutton(window, text="clock", variable=ath, value=4)
 clock.place(x=280, y=200)
 
 btn = Button(window, text="Run", command=run)
-btn.place(x=140, y=230)
+btn.place(x=100, y=230)
 
+ebtn = Button(window, text="Evaluate", command=eval)
+ebtn.place(x=200, y=230)
 # label = Label(window, text="here", font=allfont)
 # label.place(x=70, y=270)
 

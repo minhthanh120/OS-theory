@@ -1,8 +1,4 @@
-# LRU page replacement algorithm implementation in python
-# Created By: Suman Adhikari
 
-#print("Enter the number of frames: ", end="")
-#capacity = int(input())
 capacity = 4
 f, st, fault, pf = [], [], 0, 'No'
 #print("Enter the reference string: ", end="")

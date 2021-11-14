@@ -1,8 +1,3 @@
-# Optimal page replacement algorithm (OPT or OPR) implementation in python
-# Created By: Suman Adhikari
-
-#print("Enter the number of frames: ", end="")
-#capacity = int(input())
 
 capacity = 4
 f, fault, pf = [], 0, 'No'
