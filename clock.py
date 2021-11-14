@@ -34,19 +34,5 @@ for i in s:
     for y in status:
         output = output + str(y) + ' '
     output = output + '|' + str(top)
-
     print(output)
-
-    '''
-    print("   %d\t\t" % i, end='')
-    for x in f:
-        print(x, end=' ')
-    for x in range(capacity-len(f)):
-        print(' ', end=' ')
-    print(" %s" % pf, end=' ')
-    for y in status:
-        print(y, end=' ')
-    print("|", top)
-    print("")
-    '''
 print(fault)

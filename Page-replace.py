@@ -40,17 +40,35 @@ def sel():
 
 listpage= []
 capacity=0
-
+a=10
 def rnd():
     listpage = [random.randrange(int(start.get()), int(end.get())+1, 1) for i in range(int(nump.get()))]
     lst.delete(0, END)
     lst.insert(0, listpage)
     messagebox.showinfo("Chuỗi random",listpage)
-    return 
+    return 1
+
 
 def run():
-    messagebox.showinfo("test run", str(len(listpage)))
-
+    if var.get()==1:
+        listpage = s.get()
+    elif var.get()==2:
+        listpage =lst.get()
+    capacity = int(ccb.get())
+    a = listpage.split(" ")
+    if len(listpage)==0:
+        messagebox.showinfo("test run", "Mời nhập chuỗi khảo trang")
+    else:
+        if ath.get() == 1:
+            messagebox.showinfo("test run", "OPT")
+        elif ath.get() == 2:
+            messagebox.showinfo("test run", "LRU")
+        elif ath.get()== 3:
+            messagebox.showinfo("test run", "FIFO")
+        elif ath.get()==4:
+            messagebox.showinfo("test run", "clock")
+    messagebox.showinfo("***", len(a))
+    
 R1 = Radiobutton(window, text="Danh sách trang", variable=var, value=1,
                  command=sel)
 R1.place(x=10, y=15)
@@ -71,7 +89,7 @@ ls.place(x=10, y=100)
 le = Label(window, text="Kết thúc:")
 le.place(x=120, y=100)
 
-rbt = Button(window, text="Random", state=DISABLED, command= rnd)
+rbt = Button(window, text="Random", state=DISABLED, command=rnd)
 rbt.place(x=335, y=95, height=30, width=65)
 
 start = Combobox(window, state=DISABLED, width=3)
@@ -92,7 +110,6 @@ nump.place(x=281, y=100)
 
 lc = Label(window, text="Số khung trang:")
 lc.place(x=100, y=170)
-
 
 lst = Entry(window, state=DISABLED, width=64)
 lst.place(x=10, y=130)
@@ -117,7 +134,7 @@ fifo.place(x=220, y=200)
 clock = Radiobutton(window, text="clock", variable=ath, value=4)
 clock.place(x=280, y=200)
 
-btn = Button(window, text="Run", command= run)
+btn = Button(window, text="Run", command=run)
 btn.place(x=140, y=230)
 
 label = Label(window, text="here", font=allfont)

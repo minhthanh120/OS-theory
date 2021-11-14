@@ -31,5 +31,6 @@ for i in s:
     for x in range(capacity-len(f)):
         print(' ', end=' ')
     print(" %s" % pf)
-print("\nTotal Requests: %d\nTotal Page Faults: %d\nFault Rate: %0.2f%%" %
-      (len(s), fault, (fault/len(s))*100))
+print("\nTotal Page Faults: %d" %
+      (fault))
+
