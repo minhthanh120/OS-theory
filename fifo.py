@@ -5,7 +5,7 @@
 # capacity = int(input())
 capacity = 4
 f, fault, top, pf = [], 0, 0, 'No'
-s = [1, 2, 3, 4, 7, 4, 2, 3, 4, 5, 7, 1, 2, 3, 7, 1, 3, 4, 1, 5, 6, 7, 1]
+s = [1, 2, 3, 6, 7, 1, 4, 3, 4, 5, 7, 4, 1, 2, 3, 1, 3, 1, 4, 5, 6, 7, 1]
 
 print("\nString|Frame →\t", end='')
 for i in range(capacity):
@@ -29,6 +29,5 @@ for i in s:
         print(' ', end=' ')
     print(pf, end=' '*6)
     print(top)
-print("\nTotal requests: %d\nTotal Page Faults: %d\nFault Rate: %0.2f%%" %
-      (len(s), fault, (fault/len(s))*100))
+print("Total Page Faults: " , fault)
 # Viết chương trình mô phỏng các giải thuật thay thế trang: OPT, FIFO, LRU (LFU, NUR,...) Second Chance (Clock). Thực hiện theo từng bước và thực hiện toàn bộ. Input: số khung trang, chuỗi tham khảo trang, yêu cầu thay thế trang…được sinh ngẫu nhiên. Output: sơ đồ các bước thay thế trang, số PAGE FAULTS. Sử dụng Gridbox hoặc đồ họa. Đánh giá độ hiệu quả (so sánh số page fault) của từng giải thuật

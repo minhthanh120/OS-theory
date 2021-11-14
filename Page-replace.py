@@ -2,8 +2,11 @@ from tkinter import *
 import tkinter
 from tkinter.ttk import *
 from tkinter import messagebox
+
+import test_clock, test_opt
+
 import random
-allfont=("Arial", 12)
+allfont = ("Arial", 12)
 
 window = Tk()
 window.title("Mô phỏng thuật toán thay thế trang")
@@ -13,7 +16,6 @@ ath = IntVar(window, 1)
 
 # start = IntVar()
 # end=IntVar()
-
 
 
 def sel():
@@ -28,7 +30,7 @@ def sel():
         nump.config(state=NORMAL)
         nump.delete(0, END)
         nump.insert(0, '21')
-        lst.config(state= NORMAL)
+        lst.config(state=NORMAL)
     else:
         s.config(state=NORMAL)
         lst.delete(0, END)
@@ -36,40 +38,77 @@ def sel():
         start.config(state=DISABLED)
         nump.config(state=DISABLED)
         rbt.config(state=DISABLED)
-        lst.config(state= DISABLED)
+        lst.config(state=DISABLED)
 
-listpage= []
-capacity=0
-a=10
+
+listpage = []
+capacity = 0
+a = 10
+
+
 def rnd():
-    listpage = [random.randrange(int(start.get()), int(end.get())+1, 1) for i in range(int(nump.get()))]
+    listpage = [random.randrange(int(start.get()), int(
+        end.get())+1, 1) for i in range(int(nump.get()))]
     lst.delete(0, END)
     lst.insert(0, listpage)
-    messagebox.showinfo("Chuỗi random",listpage)
-    return 1
+    messagebox.showinfo("Chuỗi random", listpage)
+    return
 
 
 def run():
-    if var.get()==1:
+    if var.get() == 1:
         listpage = s.get()
-    elif var.get()==2:
-        listpage =lst.get()
+    elif var.get() == 2:
+        listpage = lst.get()
     capacity = int(ccb.get())
     a = listpage.split(" ")
-    if len(listpage)==0:
+    if len(listpage) == 0:
         messagebox.showinfo("test run", "Mời nhập chuỗi khảo trang")
     else:
         if ath.get() == 1:
-            messagebox.showinfo("test run", "OPT")
+            test_opt.f_opt(a, capacity)
         elif ath.get() == 2:
             messagebox.showinfo("test run", "LRU")
-        elif ath.get()== 3:
+        elif ath.get() == 3:
             messagebox.showinfo("test run", "FIFO")
-        elif ath.get()==4:
-            messagebox.showinfo("test run", "clock")
-    messagebox.showinfo("***", len(a))
-    
-R1 = Radiobutton(window, text="Danh sách trang", variable=var, value=1,
+        elif ath.get() == 4:
+            test_clock.f_clock(a, capacity)
+    #messagebox.showinfo("***", len(a))
+
+
+# def f_opt(a, capacity):
+#     new = Tk()
+#     newl = Label(new, text=a)
+#     newl.pack()
+#     new.mainloop()
+#     return
+
+
+# def f_lru(a, capacity):
+#     new = Tk()
+#     newl = Label(new, text=a)
+#     newl.pack()
+#     new.mainloop()
+#     return
+
+
+# def f_fifo(a, capacity):
+#     new = Tk()
+#     newl = Label(new, text=a)
+#     newl.pack()
+#     new.mainloop()
+#     return
+
+
+# def f_clock(a, capacity):
+#     new = Tk()
+#     newl = Label(new, text=a)
+#     newl.pack()
+#     new.mainloop()
+#     return
+
+
+R1 = Radiobutton(window, text="Nhập thủ công danh sách trang", variable=var, value=1,
                  command=sel)
 R1.place(x=10, y=15)
 
@@ -137,8 +176,8 @@ clock.place(x=280, y=200)
 btn = Button(window, text="Run", command=run)
 btn.place(x=140, y=230)
 
-label = Label(window, text="here", font=allfont)
-label.place(x=70, y=270)
+# label = Label(window, text="here", font=allfont)
+# label.place(x=70, y=270)
 
 window.eval('tk::PlaceWindow . center')
 
