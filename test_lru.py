@@ -7,9 +7,9 @@ from tkinter import messagebox
 # chuỗi input: frame
 # s = [1, 2, 3, 6, 7, 1, 4, 3, 4, 5, 7,
 #     4, 1, 2, 3, 1, 3, 1, 4, 5, 6, 7, 1]
-#s = [1, 2, 3, 6, 7, 1, 4, 3, 4, 5, 7, 4, 1, 2, 3, 1, 3, 1, 4, 5, 6, 7, 1]
+s = [1, 2, 3, 6, 7, 1, 4, 3, 4, 5, 7, 4, 1, 2, 3, 1, 3, 1, 4, 5, 6, 7, 1]
 # input: số trang
-#capacity = 4
+capacity = 4
 def f_lru(s, capacity):
     new = Tk()
     new.title('Giải thuật thay thế trang clock')
@@ -50,7 +50,10 @@ def f_lru(s, capacity):
                 if(y != i):
                     output= output + str(y) +  ' '*5
                 else:
-                    output = output+ str(y) + '*'+' '*3
+                    if fault>capacity:
+                        output = output+ str(y) + '*'+' '*3    
+                    else:
+                        output = output+ str(y) +' '*5
         for x in range(capacity-len(f)):
             output = output+ ' '*7
         output+= pf
@@ -60,4 +63,6 @@ def f_lru(s, capacity):
     scrollbar.config( command = mylist.yview )
 
     new.mainloop()
-
+if __name__ == "__main__":
+    
+    f_lru(s, capacity)

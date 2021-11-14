@@ -22,12 +22,12 @@ def f_clock(s, capacity):
     fault, top, f, status = 0, 0, [], [0]*capacity
     ptr = 'String|Frame →'
     for b in range(capacity):
-        ptr = ptr + str(b) + ' '*5
+        ptr = ptr + str(b) + ' '*4
 
     stt=''
     for x in range(capacity):
         stt= stt+ str(0)+ '  '
-    ptr=ptr+'Fault'+"  "+stt+ "Pointer"
+    ptr=ptr+'    Fault'+"  "+stt+ "Pointer"
     mylist.insert(END, ptr)
     for i in s:
         if i not in f:
@@ -50,11 +50,14 @@ def f_clock(s, capacity):
     #    print("   %d\t\t" % i, end='')
         for x in f:
             if x== i:
-                output = output + str(x)+'*   '
+                if fault>capacity and pf=='|Yes|':
+                    output = output + str(x)+'*   '
+                else:
+                    output = output + str(x)+'    '
             else:
                 output = output+str(x)+'    '
         for x in range(capacity-len(f)):
-            output = output+' '*6
+                output = output+' '*6
         output = output + " "*5+pf + ' '
         for y in range(capacity):
             if y == top:
@@ -69,3 +72,6 @@ def f_clock(s, capacity):
 
     new.mainloop()
 
+if __name__ == "__main__":
+    
+    f_clock(s, capacity)

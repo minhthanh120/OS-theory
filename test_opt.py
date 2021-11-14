@@ -5,15 +5,15 @@ import tkinter.font as font
 from tkinter import messagebox
 
 # chuỗi input: frame
-# s = [1, 2, 3, 6, 7, 1, 4, 3, 4, 5, 7,
-#     4, 1, 2, 3, 1, 3, 1, 4, 5, 6, 7, 1]
-# s = [1, 2, 3, 4, 7, 4, 2, 3, 4, 5, 7, 1, 2, 3, 7, 1, 3, 4, 1, 5, 6, 7, 1]
+s = [1, 2, 3, 6, 7, 1, 4, 3, 4, 5, 7,
+     4, 1, 2, 3, 1, 3, 1, 4, 5, 6, 7, 1]
+#s = [1, 2, 3, 4, 7, 4, 2, 3, 4, 5, 7, 1, 2, 3, 7, 1, 3, 4, 1, 5, 6, 7, 1]
 # input: số trang
-#capacity = 4
+capacity = 4
 
 def f_opt(s, capacity):
     new = Tk()
-    new.title('Giải thuật thay thế trang clock')
+    new.title('Giải thuật thay thế trang OPT')
     new.geometry("400x300")
     scrollbar = Scrollbar(new)
     scrollbar.pack( side = RIGHT, fill = Y )
@@ -46,12 +46,12 @@ def f_opt(s, capacity):
         else:
             pf = 'No'
         output = '  '+str(s[i])+'  '*12
-        if(pf == 'No'):
+        if pf == 'No':
             for y in f:
                 output= output + str(y) + ' '*5
         else:
             for y in f:
-                if(y != s[i]):
+                if(fault>capacity-1 and y != s[i]):
                     output= output + str(y) + '*' + '   '
                 else:
                     output = output+ str(y) + ' '*5
@@ -65,3 +65,6 @@ def f_opt(s, capacity):
 
     new.mainloop()
 
+if __name__ == "__main__":
+    
+    f_opt(s, capacity)

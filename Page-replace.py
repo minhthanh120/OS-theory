@@ -3,7 +3,7 @@ import tkinter
 from tkinter.ttk import *
 from tkinter import messagebox
 
-import test_clock, test_opt
+import test_clock, test_opt, test_fifo, test_lru
 
 import random
 allfont = ("Arial", 12)
@@ -68,9 +68,9 @@ def run():
         if ath.get() == 1:
             test_opt.f_opt(a, capacity)
         elif ath.get() == 2:
-            messagebox.showinfo("test run", "LRU")
+            test_lru.f_lru(a, capacity)
         elif ath.get() == 3:
-            messagebox.showinfo("test run", "FIFO")
+            test_fifo.f_fifo(a, capacity)
         elif ath.get() == 4:
             test_clock.f_clock(a, capacity)
     #messagebox.showinfo("***", len(a))
