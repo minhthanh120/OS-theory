@@ -1,10 +1,11 @@
-
+import time
 
 capacity = 4
 
 s = [1, 2, 3, 6, 7, 1, 4, 3, 4, 5, 7, 4, 1, 2, 3, 1, 3, 1, 4, 5, 6, 7, 1]
 #s = [1, 2, 3, 4, 7, 4, 2, 3, 4, 5, 7, 1, 2, 3, 7, 1, 3, 4, 1, 5, 6, 7, 1]
 def opt(s, capacity):
+    start = time.perf_counter()
     f, fault, pf = [], 0, 'No'
     st = [None for i in range(capacity)]
     for i in range(len(s)):
@@ -24,7 +25,8 @@ def opt(s, capacity):
             pf = 'Yes'
         else:
             pf = 'No'
-    return fault
+        end = time.perf_counter()
+    return fault, end -start
 if __name__ == "__main__":
     
     print(opt(s, capacity))

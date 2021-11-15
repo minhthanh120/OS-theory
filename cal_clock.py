@@ -1,11 +1,14 @@
+import time
 # chuỗi input: frame
 # s = [1, 2, 3, 6, 7, 1, 4, 3, 4, 5, 7,
 #     4, 1, 2, 3, 1, 3, 1, 4, 5, 6, 7, 1]
 s = [1, 2, 3, 6, 7, 1, 4, 3, 4, 5, 7, 4, 1, 2, 3, 1, 3, 1, 4, 5, 6, 7, 1]
 # input: số trang
+
 capacity = 4
 # output: thay đổi của trang
 def clock(s, capacity):
+    start = time.perf_counter()
     pf = ''
     fault, top, f, status = 0, 0, [], [0]*capacity
     for i in s:
@@ -24,8 +27,8 @@ def clock(s, capacity):
         else:
             status[f.index(i)] = 1
             pf = '| No|'
-
-    return fault
+    end=time.perf_counter()
+    return fault, end- start
 if __name__ == "__main__":
     
     print(clock(s, capacity))

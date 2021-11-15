@@ -1,31 +1,13 @@
-
-# Importing Tkinter module
-from tkinter import *
-# from tkinter.ttk import *
- 
-# Creating master Tkinter window
-master = Tk()
-master.geometry("175x175")
- 
-# Tkinter string variable
-# able to store any string value
-v = StringVar(master, "1")
- 
-# Dictionary to create multiple buttons
-values = {"RadioButton 1" : "1",
-          "RadioButton 2" : "2",
-          "RadioButton 3" : "3",
-          "RadioButton 4" : "4",
-          "RadioButton 5" : "5"}
- 
-# Loop is used to create multiple Radiobuttons
-# rather than creating each button separately
-for (text, value) in values.items():
-    Radiobutton(master, text = text, variable = v,
-                value = value, indicator = 0,
-                background = "light blue").pack(fill = X, ipady = 5)
- 
-# Infinite loop can be terminated by
-# keyboard or mouse interrupt
-# or by any predefined function (destroy())
-mainloop()
+import matplotlib.pyplot as plt
+x = [1, 2, 3, 4]
+y = [10, 20, 25, 30]
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.plot(x, y, color='lightblue', linewidth=3)
+ax.scatter([2, 4, 6],
+           [5, 15, 25],
+           color='darkgreen',
+           marker='^')
+ax.set_xlim(1, 6.5)
+plt.savefig('foo.png')
+plt.show()

@@ -76,14 +76,15 @@ def eval():
         new = Tk()
         new.title("Đánh giá thuật toán thay thế trang")
         new.geometry("400x100")
-        Label(new, text="Page-fault thuật toán OPT: " +
-              str(cal_opt.opt(a, capacity))).pack()
-        Label(new, text="Page-fault thuật toán LRU: " +
-              str(cal_lru.lru(a, capacity))).pack()
-        Label(new, text="Page-fault thuật toán FIFO: " +
-              str(cal_fifo.fifo(a, capacity))).pack()
-        Label(new, text="Page-fault thuật toán CLOCK: " +
-              str(cal_clock.clock(a, capacity))).pack()
+        p_opt, t_opt = cal_opt.opt(a, capacity)
+        p_lru, t_lru = cal_lru.lru(a, capacity)
+        p_fifo, t_fifo = cal_fifo.fifo(a, capacity)
+        p_clock, t_clock = cal_clock.clock(a, capacity)
+        Label(new, text= "Page-fault thuật toán OPT: "+ str(p_opt)+" trong: "+ str(t_opt)+" giây").pack()
+        Label(new, text= "Page-fault thuật toán LRU: "+ str(p_lru)+" trong: "+ str(t_lru)+" giây").pack()
+        Label(new, text= "Page-fault thuật toán FIFO: "+ str(p_fifo)+" trong: "+ str(t_fifo)+" giây").pack()
+        Label(new, text= "Page-fault thuật toán CLOCK: "+ str(p_clock)+" trong: "+ str(t_clock)+" giây").pack()
+        new.eval('tk::PlaceWindow . center')
         new.mainloop()
 
 
