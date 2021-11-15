@@ -22,7 +22,6 @@ for i in range(len(s)):
                     st[x] = s[i+1:].index(f[x])
             else:
                 f[st.index(max(st))] = s[i]
-            # f[st.index(max(st))] = s[i]
         fault += 1
         pf = 'Yes'
     else:
