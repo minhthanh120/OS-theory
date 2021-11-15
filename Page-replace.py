@@ -20,14 +20,11 @@ window.geometry("410x350")
 var = IntVar(window, 1)
 ath = IntVar(window, 1)
 
-# start = IntVar()
-# end=IntVar()
+
 
 
 def sel():
-    # selection = "You selected the option " + \
-    #     str(var.get())+"  " + str(ath.get())
-    # label.config(text=selection)
+
     if var.get() == 2:
         s.config(state=DISABLED)
         end.config(state=NORMAL)
@@ -109,36 +106,6 @@ def run():
     #messagebox.showinfo("***", len(a))
 
 
-# def f_opt(a, capacity):
-#     new = Tk()
-#     newl = Label(new, text=a)
-#     newl.pack()
-#     new.mainloop()
-#     return
-
-
-# def f_lru(a, capacity):
-#     new = Tk()
-#     newl = Label(new, text=a)
-#     newl.pack()
-#     new.mainloop()
-#     return
-
-
-# def f_fifo(a, capacity):
-#     new = Tk()
-#     newl = Label(new, text=a)
-#     newl.pack()
-#     new.mainloop()
-#     return
-
-
-# def f_clock(a, capacity):
-#     new = Tk()
-#     newl = Label(new, text=a)
-#     newl.pack()
-#     new.mainloop()
-#     return
 
 
 R1 = Radiobutton(window, text="Nhập thủ công danh sách trang", variable=var, value=1,

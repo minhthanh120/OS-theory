@@ -52,7 +52,7 @@ def f_opt(s, capacity):
         else:
             for y in f:
                 if(fault>capacity-1 and y != s[i]):
-                    output= output + str(y) + '*' + '   '
+                    output = output+ str(y) + ' '+' '*4
                 else:
                     output = output+ str(y) + ' '*5
         for x in range(capacity-len(f)):
