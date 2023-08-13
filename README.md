@@ -1,4 +1,4 @@
-# OS-theory
+# Tiểu luận: Đánh giá thuật toán của hệ điều hành khi thay thế trang CLOCK, FIFO, LRU, OPT
 Hãy chọn chuỗi khảo trang là (Please select page-list as) 1 2 3 6 7 1 4 3 4 5 7 4 1 2 3 1 3 1 4 5 6 7 1
 chứ không phải là (Do not input this): 1, 2, 3, 6, 7, 1, 4, 3, 4, 5, 7, 4, 1, 2, 3, 1, 3, 1, 4, 5, 6, 7, 1
 
